@@ -55,7 +55,7 @@ Vagrant.configure("2") do |config|
                   when "IR1"
                     box.vm.provision "shell", path: "playbooks/files/IR1/prepare_os_IR1.sh"
                   when "IR2"
-                    box.vm.network "forwarded_port", guest: 8080, host: 1234, host_ip: "127.0.0.1", id: "nginx"
+                    box.vm.network "forwarded_port", guest: 8080, host: 8082, host_ip: "127.0.0.1", id: "nginx"
                     box.vm.provision "shell", path: "playbooks/files/IR2/prepare_os_IR2.sh" 
                   when "CR"
                     box.vm.provision :ansible do |ansible|
