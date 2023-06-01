@@ -1,0 +1,19 @@
+---
+- hosts: "CS"
+  become: true
+  gather_facts: yes
+
+  tasks: 
+# install nginx
+  - name: INSTALL EPEL-RELEASE REPO
+    yum: name=epel-release state=present
+
+  - name: INSTALL NGINX WEB
+    yum: name=nginx state=present
+
+  - name: START/ENABLE NGINX
+    service: 
+      name: nginx
+      state: started
+      enabled: yes
+      

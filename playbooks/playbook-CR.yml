@@ -1,0 +1,15 @@
+---
+- hosts: "CR"
+  become: true
+  gather_facts: no
+
+  tasks: 
+# copy knock-script
+  - name: COPY SCRIPT
+    copy:
+      src: CR/knock-knock.sh
+      dest: /home/vagrant/knock-knock.sh
+      owner: vagrant
+      group: vagrant
+      mode: 'preserve'
+      
