@@ -53,20 +53,20 @@ Vagrant.configure("2") do |config|
               
               case boxname.to_s
                   when "IR1"
-                    box.vm.provision "shell", path: "playbooks/files/IR1/prepare_os.sh"
+                    box.vm.provision "shell", path: "playbooks/files/IR1/prepare_os_IR1.sh"
                   when "IR2"
                     box.vm.network "forwarded_port", guest: 8080, host: 1234, host_ip: "127.0.0.1", id: "nginx"
-                    box.vm.provision "shell", path: "playbooks/files/IR2/prepare_os.sh" 
+                    box.vm.provision "shell", path: "playbooks/files/IR2/prepare_os_IR2.sh" 
                   when "CR"
                     box.vm.provision :ansible do |ansible|
                       ansible.playbook = "playbooks/playbook-CR.yml"
                     end
-                    box.vm.provision "shell", path: "playbooks/files/CR/prepare_os.sh" 
+                    box.vm.provision "shell", path: "playbooks/files/CR/prepare_os_CR.sh" 
                   when "CS"
                     box.vm.provision :ansible do |ansible|
                       ansible.playbook = "playbooks/playbook-CS.yml"
                     end
-                    box.vm.provision "shell", path: "playbooks/files/CS/prepare_os.sh" 
+                    box.vm.provision "shell", path: "playbooks/files/CS/prepare_os_CS.sh" 
               end
         end
   end
