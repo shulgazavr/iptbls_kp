@@ -57,15 +57,19 @@ echo "DEFROUTE=no" >> /etc/sysconfig/network-scripts/ifcfg-eth0
 echo "GATEWAY=192.168.255.1" >> /etc/sysconfig/network-scripts/ifcfg-eth1
 ```
 ### Запуск, проверка проекта.
+Из корневого каталога проекта:
 ```
 vagrant up
 ```
+С хостовой машины:
 ```
 curl http://127.0.0.1:8082/
 ```
+Из корневого каталога проекта:
 ```
 vagrant ssh CR
 ```
+На сервере `CR`:
 ```
 ./knock-knock.sh
 ```
