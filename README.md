@@ -56,7 +56,16 @@ iptables -t nat -A POSTROUTING -d 192.168.0.2 -p tcp -m tcp --dport 80 -j SNAT -
 echo "DEFROUTE=no" >> /etc/sysconfig/network-scripts/ifcfg-eth0 
 echo "GATEWAY=192.168.255.1" >> /etc/sysconfig/network-scripts/ifcfg-eth1
 ```
-
-
-
-
+### Запуск, проверка проекта.
+```
+vagrant up
+```
+```
+curl http://127.0.0.1:8082/
+```
+```
+vagrant ssh CR
+```
+```
+./knock-knock.sh
+```
