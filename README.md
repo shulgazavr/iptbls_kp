@@ -7,7 +7,6 @@
 4. запустить nginx на centralServer.
 5. пробросить 80й порт на inetRouter2 8080.
 6. дефолт в инет оставить через inetRouter.
-7. реализовать проход на 80й порт без маскарадинга
 
 ### Структура каталогов и файлов проекта. Краткое описание.
 ```
@@ -57,7 +56,6 @@ iptables -t nat -A POSTROUTING -d 192.168.0.2 -p tcp -m tcp --dport 80 -j SNAT -
 echo "DEFROUTE=no" >> /etc/sysconfig/network-scripts/ifcfg-eth0 
 echo "GATEWAY=192.168.255.1" >> /etc/sysconfig/network-scripts/ifcfg-eth1
 ```
-7. 
 
 
 
